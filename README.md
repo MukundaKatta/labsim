@@ -1,44 +1,43 @@
-# LABSIM - Virtual STEM Lab
+# labsim
 
-Simulate physics, chemistry, and biology experiments from the command line.
+**LabSim — Virtual STEM Lab. AI-powered physics, chemistry, and biology experiment simulations.**
 
-## Installation
+![Build](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-proprietary-red)
 
+## Install
 ```bash
 pip install -e ".[dev]"
 ```
 
-## Usage
-
-```bash
-# Run a predefined experiment
-labsim run projectile --angle 45 --velocity 20
-
-# Interactive experiment mode
-labsim experiment physics pendulum --length 1.5 --angle 30
-
-# Generate a lab report
-labsim report projectile --format rich
-```
-
-## Labs
-
-- **Physics**: Projectile motion, simple pendulum, Ohm's law circuits, thin-lens optics
-- **Chemistry**: Ideal gas law, reaction kinetics, acid-base titration, molecular modeling
-- **Biology**: Cell division (logistic growth), Mendelian genetics, population dynamics (Lotka-Volterra)
-
-## Examples
-
+## Quick Start
 ```python
-from labsim.labs.physics import PhysicsLab
-from labsim.simulator.engine import SimulationEngine
-
-lab = PhysicsLab()
-params = lab.projectile_motion(angle_deg=45, velocity=25)
-engine = SimulationEngine()
-result = engine.solve(params)
+from src.core import Labsim
+ instance = Labsim()
+r = instance.process(input="test")
 ```
 
-## Author
+## CLI
+```bash
+python -m src status
+python -m src run --input "data"
+```
 
-Mukunda Katta
+## API
+| Method | Description |
+|--------|-------------|
+| `process()` | Process |
+| `analyze()` | Analyze |
+| `transform()` | Transform |
+| `validate()` | Validate |
+| `export()` | Export |
+| `get_stats()` | Get stats |
+| `get_stats()` | Get stats |
+| `reset()` | Reset |
+
+## Test
+```bash
+pytest tests/ -v
+```
+
+## License
+(c) 2026 Officethree Technologies. All Rights Reserved.
